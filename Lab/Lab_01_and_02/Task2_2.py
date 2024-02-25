@@ -14,4 +14,4 @@ while (True):
 list3 = list1 + list2
 list3.sort()
 
-print(list3)
+print("Smallest Value: ",list3[0],"\nLargest Value: ",list3[-1])
