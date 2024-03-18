@@ -13,10 +13,9 @@ def printPath(parentArray, goalNode) :
 
 def depthFirstTraversal(graph) :
     myStack = queue.LifoQueue()
+    nodeArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     visArray = [False, False, False, False, False, False, False]
-    parentArray = [-1, -1, -1, -1, -1, -1, -1]
-    nodeArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     startNode = 0
 
     myStack.put(startNode)
@@ -26,16 +25,11 @@ def depthFirstTraversal(graph) :
             for j in range(len(graph[0])):
                 if (graph[startNode][j] == True):
                     myStack.put(j)
-                    parentArray[j] = startNode
         
+        print(startNode, end=" ")
         visArray[startNode] = True
         startNode = myStack.get()
-    
-    i = 6
-    while (parentArray[i] != -1):
-        print(nodeArray[i], " <- ", end = "")
-        i = parentArray[i]
-    print('A <- ')
+
 
 def depthFirstSearch(graph, goalNode) :
     myStack = queue.LifoQueue()
@@ -71,6 +65,6 @@ graph = [
 
 
 goalNode = 5
-depthFirstSearch(graph, goalNode)
+depthFirstTraversal(graph)
 
 
